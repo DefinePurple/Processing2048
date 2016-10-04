@@ -14,7 +14,7 @@ class Controller {
   }
 
   void move(char choice) {
-
+    char previousChoice = '0';
     switch(choice) {
     case 'w':
       for (int i=0; i<grids.size; i++)
@@ -49,12 +49,13 @@ class Controller {
     case 'd':
       for (int i=0; i<grids.size; i++)
         maths.moveRight(grids);
-        
       maths.combineRight(grids);
       
       for (int i=0; i<grids.size; i++)
         maths.moveRight(grids);
       break;
     }
+    if(choice == 'w' || choice == 'a' || choice == 's' || choice == 'd') 
+      grids.addNewNumber();
   }
 }

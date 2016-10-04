@@ -3,6 +3,8 @@ void setup(){
   fill(0);
   stroke(0);
   background(255);
+  textAlign(CENTER,CENTER);
+  textSize(20);
   mainFrame = new Controller();
 }
 
