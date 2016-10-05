@@ -1,20 +1,29 @@
 class Controller {
   Grids grids;
   Maths maths;
-
+  Colours colours;
+  
   Controller() {
     grids = new Grids();
     maths = new Maths(grids);
-
-    grids.drawGrid();
+    colours = new Colours();
+    
+    grids.drawNumbers();
   }
 
-  void draw() {
-    grids.drawGrid();
+  void drawNumbers() {
+    grids.drawNumbers();
   }
 
+  void drawGrid(){
+    grids.drawGrid();  
+  }
+  
+  void colourPicker(){
+    colours.colourPicker(grids);
+  }
+  
   void move(char choice) {
-    char previousChoice = '0';
     switch(choice) {
     case 'w':
       for (int i=0; i<grids.size; i++)

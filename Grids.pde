@@ -1,10 +1,10 @@
 class Grids {
-  int grid[][];
+  float grid[][];
   int size;
 
   Grids() {
     size = 5;
-    grid = new int[size][size]; 
+    grid = new float[size][size]; 
 
     int rand1 = (int)random(4);
     int rand2 = (int)random(4);
@@ -15,11 +15,11 @@ class Grids {
     do{
       rand1 = (int)random(4);
       rand2 = (int)random(4);
-      grid[rand1][rand2] = 2;
+      grid[rand1][rand2] = 2.0f;
     }while(grid[rand1][rand2] != 2);
   }
 
-  void drawGrid() {
+  void drawNumbers() {
     int i, j, posX, posY, halfX, halfY, tempX, tempY;
     tempX = (width/size*2);
     tempY = (height/size);
@@ -36,9 +36,20 @@ class Grids {
       for (j=0; j<size; j++) {
         tempX = (width/size) * (j+1);
         if(grid[i][j] != 0)
-          text(grid[i][j], tempX-halfX, tempY-halfY);
+          text((int) grid[i][j], tempX-halfX, tempY-halfY);
       }
     }
+  }
+  
+  void drawGrid(){
+    int i, posX, posY;
+    
+    for (i=0; i<=size; i++) {
+      posX = (width/size)*(i);
+      posY = (height/size)*(i);
+      line(posX, 0, posX, height);
+      line(0, posY, width, posY);
+    } 
   }
   
   void addNewNumber(){
