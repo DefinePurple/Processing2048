@@ -6,12 +6,13 @@ class Maths {
   }
 
   //All left movements and maths
-  void combineLeft(Grids grids) {
+  void combineLeft(Grids grids, Score scores) {
     for (i=0; i<len; i++) {
       for (j=0; j<len-1; j++) {
         if (grids.grid[i][j+1] == grids.grid[i][j]) {
           grids.grid[i][j] += grids.grid[i][j+1];
           grids.grid[i][j+1] = 0;
+          scores.score += grids.grid[i][j];
         }
       }//end for j
     }//end for i
@@ -30,12 +31,13 @@ class Maths {
 
 
   //All right movements and maths
-  void combineRight(Grids grids) {
+  void combineRight(Grids grids, Score scores) {
     for (i=len-1; i>=0; i--) {
       for (j=len-1; j>0; j--) {
         if (grids.grid[i][j-1] == grids.grid[i][j]) {
           grids.grid[i][j] += grids.grid[i][j-1];
           grids.grid[i][j-1] = 0;
+          scores.score += grids.grid[i][j];
         }
       }//end for j
     }//end for i
@@ -54,12 +56,13 @@ class Maths {
 
 
   //All down movements & maths
-  void combineDown(Grids grids) {
+  void combineDown(Grids grids, Score scores) {
     for (i=len-1; i>0; i--) {
       for (j=len-1; j>=0; j--) {
         if (grids.grid[i-1][j] == grids.grid[i][j]) {
           grids.grid[i][j] += grids.grid[i-1][j];
           grids.grid[i-1][j] = 0;
+          scores.score += grids.grid[i][j];
         }
       }//end for j
     }//end for i
@@ -78,12 +81,13 @@ class Maths {
 
 
   //All up movements & maths
-  void combineUP(Grids grids) {
+  void combineUP(Grids grids, Score scores) {
     for (i=0; i<len-1; i++) {
       for (j=0; j<len; j++) {
         if (grids.grid[i+1][j] == grids.grid[i][j]) {
           grids.grid[i][j] += grids.grid[i+1][j];
           grids.grid[i+1][j] = 0;
+          scores.score += grids.grid[i][j];
         }
       }//end for j
     }//end for i

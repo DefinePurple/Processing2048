@@ -1,5 +1,5 @@
 void setup(){
-  size(500,500); 
+  size(600,600); 
   fill(0);
   stroke(0);
   strokeWeight(10);
@@ -16,7 +16,7 @@ void draw(){
   mainFrame.colourPicker();
   mainFrame.drawNumbers();
   mainFrame.drawGrid();
-  
+  mainFrame.drawScore();
 }
 
 void keyPressed(){

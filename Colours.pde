@@ -4,14 +4,14 @@ class Colours{
     float sizeX, sizeY;
     float x = 0, y = 0; 
     int len = grids.grid.length;
-    sizeX = width/len;
-    sizeY = height/len;
+    sizeX = grids.nWidth/len;
+    sizeY = grids.nHeight/len;
      
     for(int i=0;i<len;i++){
       for(int j=0;j<len;j++){
         if(grids.grid[i][j] != 0){
           fill(120,90,211);
-          rect(x,y,sizeX,sizeY);
+          rect(x+grids.borderW,y+grids.borderH,sizeX,sizeY);
         }
         x += sizeX;
       }
